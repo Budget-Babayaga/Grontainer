@@ -61,23 +61,20 @@
       - e.g. `int MAX_RETRY_COUNT = 5;`
 
 ## Coding Standards
-  - Methods should only test one thing (not always possible)
-    - e.g. `Create configuration`
-    - e.g. `Test Configuration`
-    - e.g. `Delete Configuration`
-  - Methods should be written in tandem with unit, negative, and appropriate end to end testing
-    - After writing a test to perform as expected, make sure if it isn't configured as expected it fails
-    - When catching exceptions, catch specific exceptions, log the error and throw a new exception so the test fails
-    - Use logging frequently, it helps to quickly debug code and write tests (every method should have logging)
-    - Add unit tests to try and break your method. 
-    - You wont always have an opportunity to add end to end testing, but add them where needed.
-        - Merge requests will be denied if appropriate testing isn't written 
+### Testing
+ - Methods and Features are to have adequate unit and integration tests written before any pull request can be accepted.
+  - Methods such as setters and getters are to have atleast one negative and one standard unit test.
+  - Unit test count is to scale appropriately according to the complexity of the method.
+  - Features are to have appropriate integration and end to end tests.
+  - Fixes are to have appropriate unit, integration and end to end tests included with the fix for the sake of regression testing.
+  - Tests should only test one thing
+    - e.g. `Set store location with zip code.`
+    - e.g. `Fail to set store location using invalid zip code`
+    - e.g. `Set store location by city name`
   - Selenium code should use the Page Object Model making each page a class
     - Use inheritance to pull in common variables and methods for your product
     - The top of the class should contain web elements
     - Inside the class should contain methods that do one thing with JavaDoc
-    - Inner classes can be used to help limit scope (classes using this logic can
-      only be called in a groovy class)
     - e.g.
     ```
         /**
@@ -146,20 +143,15 @@
   - `git clone <repo url>`
   - `git checkout <name>-<project>`
 
-
-### IntelliJ
-  - Open new project with existing sources
-  - Import project from external module | Maven
-  - Select maven project to import
-  - Set the groovy folder as sources in project structure
+## Maven
+ - Run `mvn clean install` in your local terminal in order to update dependencies. 
+ > The first time this is called it can take a while. This will depend on your network speed, what resources maven already has locally, and how many dependencies the project currently has.
 
 ## Contributing
-  - This project uses GitFlow. For an in depth overview of GitFlow, check [here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
-  - In summary, branch off of develop, merge into develop when a feature/bugfix/thing is complete.
+  - In summary: Branch off of develop for each feature/bugfix/thing, submit a PR (with a review request) into develop when a feature/bugfix/thing is complete.
 
 ## GitHub
-  - Our merge requests and code reviews will be done using Github's tools.
-  - The master branch is protected.
+  - Pull requests and code reviews will be done using Github's tools.
   - The develop branch is our mainline development branch.
 
 ## Authors
