@@ -9,7 +9,7 @@
   - Selenium
   - ReST
 
-## Store whose pricing is tracked
+## Store whose price tracking is under development
   - Target
   
 ## Store whose pricing is planned to be tracked
