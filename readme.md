@@ -149,6 +149,7 @@
 
 ## Contributing
   - In summary: Branch off of develop for each feature/bugfix/thing, submit a PR (with a review request) into develop when a feature/bugfix/thing is complete.
+  - Branch name is to be `name-task` Example: `Brian-Lists`
 
 ## GitHub
   - Pull requests and code reviews will be done using Github's tools.
@@ -156,3 +157,4 @@
 
 ## Authors
   - Jonathan Zollinger
+  - Brian Santarossa
