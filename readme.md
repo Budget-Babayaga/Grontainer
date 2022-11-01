@@ -1,18 +1,12 @@
 # Gracker - The Grocery Tracker
-#### v0.0.1 September 2021
 
-## Summary
+## Goal Summary
 - Automates the gathering of grocery price data
 - Tracks and analyzes the grocery price data
 - Serves and displays the gathered data to localhost
-- Automation methods
-  - Selenium
-  - ReST
 
-## Store whose price tracking is under development
-  - Target
-  
 ## Store whose pricing is planned to be tracked
+  - Target
   - WalMart
   - Smiths
   - Dick's Market
@@ -142,10 +136,6 @@
 ## Installation
   - `git clone <repo url>`
   - `git checkout <name>-<project>`
-
-## Maven
- - Run `mvn clean install` in your local terminal in order to update dependencies. 
- > The first time this is called it can take a while. This will depend on your network speed, what resources maven already has locally, and how many dependencies the project currently has.
 
 ## Contributing
   - In summary: Branch off of develop for each feature/bugfix/thing, submit a PR (with a review request) into develop when a feature/bugfix/thing is complete.
