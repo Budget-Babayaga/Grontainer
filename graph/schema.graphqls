@@ -1,0 +1,91 @@
+type ScheduledDelivery {
+  availability_status: String
+  location_available_to_promise_quantity: Int
+}
+
+type InStoreOnly {
+  availability_status: String
+}
+
+type OrderPickup {
+  availability_status: String
+  pickup_date: String
+  guest_pick_sla: Int
+  location_locale: String
+}
+
+type Store {
+  location_name: String
+}
+
+type StoreOptions {
+  search_response_store_type: String
+  location_available_to_promise_quantity: Int
+  location_id: String
+  in_store_only: InStoreOnly
+  order_pickup: OrderPickup
+  store: Store
+}
+
+type Services {
+  shipping_method_id: String
+  min_delivery_date: String
+  max_delivery_date: String
+  is_two_day_shipping: Boolean
+  is_base_shipping_method: Boolean
+}
+
+type ShippingOptions {
+  availability_status: String
+  loyalty_availability_status: String
+  services: [Services]
+}
+
+type Fulfillment {
+  product_id: String
+  is_out_of_stock_in_all_store_locations: Boolean
+  scheduled_delivery: ScheduledDelivery
+  store_options: [StoreOptions]
+  shipping_options: ShippingOptions
+}
+
+type ProductVendors {
+  id: String
+}
+
+type MerchandiseClassification {
+  class_id: Int
+  department_id: Int
+}
+
+type Enrichment {
+  buy_url: String
+}
+
+type ProductDescription {
+  title: String
+}
+
+type Item {
+  is_limited_time_offer: Boolean
+  relationship_type_code: String
+  product_vendors: [ProductVendors]
+  merchandise_classification: MerchandiseClassification
+  enrichment: Enrichment
+  product_description: ProductDescription
+}
+
+type ProductSummaries {
+  typename: String
+  tcin: String
+  fulfillment: Fulfillment
+  item: Item
+}
+
+type Data {
+  product_summaries: [ProductSummaries]
+}
+
+type GroceryObject {
+  data: Data
+}
