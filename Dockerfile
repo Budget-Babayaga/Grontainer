@@ -2,9 +2,9 @@ FROM jzollinger/baseline-workstation:rubi8
 
 WORKDIR /root/
 RUN rm -rf go  
-RUN wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
-RUN sha256sum go1.20.4.linux-amd64.tar.gz | grep "698ef3243972a51ddb4028e4a1ac63dc6d60821bf18e59a807e051fee0a385bd"
-RUN tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
+RUN wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz
+RUN sha256sum go1.20.5.linux-amd64.tar.gz | grep "d7ec48cde0d3d2be2c69203bc3e0a44de8660b9c09a6e85c4732a3f7dc442612"
+RUN tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz
 RUN sed -i '4 i export PATH=$PATH:/usr/local/go/bin' ~/.bashrc
 ENV PATH="$PATH:/usr/local/go/bin"
 
